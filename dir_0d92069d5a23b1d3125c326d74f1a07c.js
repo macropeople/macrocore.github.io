@@ -4,11 +4,13 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_assigndirectlib.sas", "mm__assigndirectlib_8sas.html", null ],
     [ "mm_assignlib.sas", "mm__assignlib_8sas.html", "mm__assignlib_8sas" ],
     [ "mm_createapplication.sas", "mm__createapplication_8sas.html", "mm__createapplication_8sas" ],
+    [ "mm_createdataset.sas", "mm__createdataset_8sas.html", null ],
     [ "mm_createdocument.sas", "mm__createdocument_8sas.html", "mm__createdocument_8sas" ],
     [ "mm_createfolder.sas", "mm__createfolder_8sas.html", null ],
     [ "mm_createlibrary.sas", "mm__createlibrary_8sas.html", "mm__createlibrary_8sas" ],
     [ "mm_createstp.sas", "mm__createstp_8sas.html", "mm__createstp_8sas" ],
     [ "mm_createwebservice.sas", "mm__createwebservice_8sas.html", null ],
+    [ "mm_deletestp.sas", "mm__deletestp_8sas.html", "mm__deletestp_8sas" ],
     [ "mm_getcols.sas", "mm__getcols_8sas.html", null ],
     [ "mm_getdetails.sas", "mm__getdetails_8sas.html", null ],
     [ "mm_getdirectories.sas", "mm__getdirectories_8sas.html", null ],
@@ -25,5 +27,6 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_getwebappsrvprops.sas", "mm__getwebappsrvprops_8sas.html", null ],
     [ "mm_updateappextension.sas", "mm__updateappextension_8sas.html", null ],
     [ "mm_updatedocument.sas", "mm__updatedocument_8sas.html", null ],
+    [ "mm_updatestpservertype.sas", "mm__updatestpservertype_8sas.html", "mm__updatestpservertype_8sas" ],
     [ "mm_updatestpsourcecode.sas", "mm__updatestpsourcecode_8sas.html", null ]
 ];
