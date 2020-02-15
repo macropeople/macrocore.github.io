@@ -58,6 +58,7 @@ var searchData=
   ['mm_5fupdatestpservertype_2esas',['mm_updatestpservertype.sas',['../mm__updatestpservertype_8sas.html',1,'']]],
   ['mm_5fupdatestpsourcecode_2esas',['mm_updatestpsourcecode.sas',['../mm__updatestpsourcecode_8sas.html',1,'']]],
   ['mm_5fwebout_2esas',['mm_webout.sas',['../mm__webout_8sas.html',1,'']]],
+  ['mmx_5fdeletemetafolder_2esas',['mmx_deletemetafolder.sas',['../mmx__deletemetafolder_8sas.html',1,'']]],
   ['mp_5fabort_2esas',['mp_abort.sas',['../mp__abort_8sas.html',1,'']]],
   ['mp_5fbinarycopy_2esas',['mp_binarycopy.sas',['../mp__binarycopy_8sas.html',1,'']]],
   ['mp_5fcleancsv_2esas',['mp_cleancsv.sas',['../mp__cleancsv_8sas.html',1,'']]],
