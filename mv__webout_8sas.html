@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: base/mp_stpsetup.sas Source File</title>
+<title>MacroCore: viya/mv_webout.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mp__stpsetup_8sas_source.html','');});
+$(document).ready(function(){initNavTree('mv__webout_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -113,10 +113,34 @@ $(document).ready(function(){initNavTree('mp__stpsetup_8sas_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mp_stpsetup.sas</div>  </div>
+<div class="title">mv_webout.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="mp__stpsetup_8sas.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  @file</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  @brief Configures a non STP session like an STP session</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  @details When running a web enabled STP in batch mode, there are a few things</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    that need to be configured to avoid errors - such as setting up the _webout</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    fileref, or providing dummy h54s macros.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  @version 9.2</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  @author Allan Bowe</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">  @source https://github.com/macropeople/macrocore</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">**/</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;%macro mp_stpsetup(</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;)<span class="comment">/*/STORE SOURCE*/</span>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;%<span class="keywordflow">if</span> &amp;sysprocessmode ne SAS Stored Process Server %then %<span class="keywordflow">do</span>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  filename _webout cache; <span class="comment">/* cache mode enables pdf etc output */</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">/* h54s macros need to have global scope */</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  data _null_;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    call execute(<span class="stringliteral">&#39;%macro hfsheader();%mend;%macro hfsfooter();%mend;&#39;</span>);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    call execute(<span class="stringliteral">&#39;%macro hfsOutDataset(one,two,three);%mend;&#39;</span>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    call execute(<span class="stringliteral">&#39;%macro hfsGetDataset(one,two);%mend;&#39;</span>);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  run;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;%end;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;%mend;</div></div><!-- fragment --></div><!-- contents -->
+
+<p>Send data to/from the SAS Viya Job Execution Service.  
+<a href="#details">More...</a></p>
+
+<p><a href="mv__webout_8sas_source.html">Go to the source code of this file.</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This macro should be added to the start of each Job Execution Service, <b>immediately</b> followed by a call to: </p><pre class="fragment">%webout(OPEN)
+</pre><p>This will read all the input data and create same-named SAS datasets in the WORK library. You can then insert your code, and send data back using the following syntax:</p>
+<p>data some datasets; * make some data ; retain some columns; run;</p>
+<p>webout(ARR,some) * Array format, fast, suitable for large tables ; webout(OBJ,datasets) * Object format, easier to work with ; webout(CLOSE)</p>
+<p>Notes:</p>
+<p>The <code>webout()</code> macro is a simple wrapper for <code>mv_webout</code> to enable cross platform compatibility. It may be removed if your use case does not involve SAS 9.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in=</td><td>provide path or fileref to input csv </td></tr>
+    <tr><td class="paramname">out=</td><td>output path or fileref to output csv </td></tr>
+    <tr><td class="paramname">qchar=</td><td>quote char - hex code 22 is the double quote.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section version"><dt>Version</dt><dd>Viya 3.3 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Allan Bowe </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="mv__webout_8sas_source.html">mv_webout.sas</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 
     <li class="footer"><b>Generated by</b>

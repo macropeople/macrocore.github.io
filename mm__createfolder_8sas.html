@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('mm__createfolder_8sas.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Create a metadata folder.  
+<p>Recursively create a metadata folder.  
 <a href="#details">More...</a></p>
 
 <p><a href="mm__createfolder_8sas_source.html">Go to the source code of this file.</a></p>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('mm__createfolder_8sas.html','');});
 <p>The macro will NOT create a new ROOT folder - not because it can't, but more because that is generally not something your administrator would like you to do!</p>
 <p>The macro is idempotent - if you run it twice, it will only create a folder once.</p>
 <p>usage:</p>
-<p>mm_createfolder(path=/Tests/some folder)</p>
+<p>mm_createfolder(path=/some/meta/folder)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path=</td><td>Name of the folder to create. </td></tr>

@@ -117,21 +117,30 @@ $(document).ready(function(){initNavTree('mv__createwebservice_8sas.html','');})
 </div><!--header-->
 <div class="contents">
 
-<p>Creates a JobExecution object if it doesn't already exist.  
+<p>Creates a JobExecution web service if it doesn't already exist.  
 <a href="#details">More...</a></p>
 
 <p><a href="mv__createwebservice_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>For efficiency, minimise the number of calls to _webout. In Viya this is stored in a database before being sent to the browser, so it's better to write it elsewhere and then send it all in one go.</p>
-<p>To use this macro, a refresh token is needed. See:</p>
-<p>let client=someclient; let secret=MySecret; mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)</p>
-<p>Navigate to the url and paste the access code below</p>
-<p>mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6) mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)</p>
-<p>Now we can create some code and add it to a web service</p>
-<p>options mprint; filename mycode temp; data <em>null</em>; file mycode; put "data;file _webout MOD; put 'Hello, wurrld';run;"; run; mv_createwebservice(path=/Public, name=testJob, code=mycode)</p>
+<div class="textblock"><p><code> Step 1 - load macros and obtain refresh token ;</code></p>
+<p><code> filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</code></p>
+<p><code> let client=newsysfunc(ranuni(0)); let secret=MySecret; mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)</code></p>
+<p><code> Step 2 - navigate to the url in the log and paste the access code below;</code></p>
+<p><code> mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6) mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)</code></p>
+<p><code> Step 3 - Now we can create some code and add it to a web service;</code></p>
+<p><code>filename ft15f001 temp; parmcards4; do some sas, any inputs are now already WORK tables; data example1 example2; set sashelp.class; run; send data back; webout(ARR,example1) * Array format, fast, suitable for large tables ; webout(OBJ,example2) * Object format, easier to work with ; webout(CLOSE) ;;;; mv_createwebservice(path=/Public/app/common, name=appInit, code=ft15f001)</code></p>
+<p><code></code></p>
+<p>Notes: To minimise postgres requests, output json is stored in a temporary file and then sent to _webout in one go at the end.</p>
+<h4>Dependencies </h4>
+<ul>
+<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
+<li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that foloder does not already exist. ">mv_createfolder.sas</a> </li>
+<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
+<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a></li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path=</td><td>The full path where the service will be created </td></tr>
+    <tr><td class="paramname">path=</td><td>The full path (on SAS Drive) where the service will be created </td></tr>
     <tr><td class="paramname">name=</td><td>The name of the service </td></tr>
     <tr><td class="paramname">desc=</td><td>The description of the service </td></tr>
     <tr><td class="paramname">precode=</td><td>Space separated list of filerefs, pointing to the code that needs to be attached to the beginning of the service </td></tr>

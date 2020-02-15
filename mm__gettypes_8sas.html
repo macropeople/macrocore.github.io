@@ -122,13 +122,15 @@ $(document).ready(function(){initNavTree('mm__gettypes_8sas.html','');});
 
 <p><a href="mm__gettypes_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Usage:</p>
+<p>mm_gettypes(outds=types)</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">outds</td><td>the dataset to create that contains the list of types</td></tr>
+    <tr><td class="paramname">outds</td><td>the dataset to create that contains the list of types </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>outds dataset containing all types</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>outds dataset containing all types </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The following filenames are created and then de-assigned: <pre class="fragment">filename sxlemap clear;
 filename response clear;
 libname _XML_ clear;

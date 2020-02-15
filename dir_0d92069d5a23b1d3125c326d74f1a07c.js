@@ -9,12 +9,15 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_createfolder.sas", "mm__createfolder_8sas.html", null ],
     [ "mm_createlibrary.sas", "mm__createlibrary_8sas.html", "mm__createlibrary_8sas" ],
     [ "mm_createstp.sas", "mm__createstp_8sas.html", "mm__createstp_8sas" ],
-    [ "mm_createwebservice.sas", "mm__createwebservice_8sas.html", null ],
+    [ "mm_createwebservice.sas", "mm__createwebservice_8sas.html", "mm__createwebservice_8sas" ],
+    [ "mm_deletedocument.sas", "mm__deletedocument_8sas.html", "mm__deletedocument_8sas" ],
     [ "mm_deletestp.sas", "mm__deletestp_8sas.html", "mm__deletestp_8sas" ],
+    [ "mm_getauthinfo.sas", "mm__getauthinfo_8sas.html", null ],
     [ "mm_getcols.sas", "mm__getcols_8sas.html", null ],
     [ "mm_getdetails.sas", "mm__getdetails_8sas.html", null ],
     [ "mm_getdirectories.sas", "mm__getdirectories_8sas.html", null ],
     [ "mm_getdocument.sas", "mm__getdocument_8sas.html", "mm__getdocument_8sas" ],
+    [ "mm_getfoldertree.sas", "mm__getfoldertree_8sas.html", null ],
     [ "mm_getgroupmembers.sas", "mm__getgroupmembers_8sas.html", null ],
     [ "mm_getgroups.sas", "mm__getgroups_8sas.html", null ],
     [ "mm_getlibs.sas", "mm__getlibs_8sas.html", null ],
@@ -28,5 +31,6 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_updateappextension.sas", "mm__updateappextension_8sas.html", null ],
     [ "mm_updatedocument.sas", "mm__updatedocument_8sas.html", null ],
     [ "mm_updatestpservertype.sas", "mm__updatestpservertype_8sas.html", "mm__updatestpservertype_8sas" ],
-    [ "mm_updatestpsourcecode.sas", "mm__updatestpsourcecode_8sas.html", null ]
+    [ "mm_updatestpsourcecode.sas", "mm__updatestpsourcecode_8sas.html", null ],
+    [ "mm_webout.sas", "mm__webout_8sas.html", null ]
 ];

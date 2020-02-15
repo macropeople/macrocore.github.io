@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: base/mp_stpsetup.sas File Reference</title>
+<title>MacroCore: base/mp_getddl.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mp__stpsetup_8sas.html','');});
+$(document).ready(function(){initNavTree('mp__getddl_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -113,20 +113,35 @@ $(document).ready(function(){initNavTree('mp__stpsetup_8sas.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mp_stpsetup.sas File Reference</div>  </div>
+<div class="title">mp_getddl.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Configures a non STP session like an STP session.  
+<p>Extract DDL in various formats, by table or library.  
 <a href="#details">More...</a></p>
 
-<p><a href="mp__stpsetup_8sas_source.html">Go to the source code of this file.</a></p>
+<p><a href="mp__getddl_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>When running a web enabled STP in batch mode, there are a few things that need to be configured to avoid errors - such as setting up the _webout fileref, or providing dummy h54s macros.</p>
-<dl class="section version"><dt>Version</dt><dd>9.2 </dd></dl>
+<div class="textblock"><p>Data Definition Language relates to a set of SQL instructions used to create tables in SAS or a database. The macro can be used at table or library level. The default behaviour is to create DDL in SAS format.</p>
+<p>Usage:</p>
+<p>mp_getddl(SOMELIB) * execute all libs ;</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lib</td><td>libref of the library to create DDL for. Should be assigned. </td></tr>
+    <tr><td class="paramname">ds</td><td>dataset to create ddl for </td></tr>
+    <tr><td class="paramname">fref=</td><td>the fileref to which to write the DDL. If not preassigned, will be assigned to TEMP. </td></tr>
+    <tr><td class="paramname">flavour=</td><td>The type of DDL to create (default=SAS). Supported=SQLSERVER</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Testing:</p>
+<p>data test(index=(pk=(x y)/unique /nomiss)); x=1; y='blah'; run; proc sql; describe table </p>
+<p>mp_getddl()</p>
+<p>data <em>null</em>; infile getddl; input; list;run;</p>
+<dl class="section version"><dt>Version</dt><dd>9.3 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a> </dd></dl>
 
-<p class="definition">Definition in file <a class="el" href="mp__stpsetup_8sas_source.html">mp_stpsetup.sas</a>.</p>
+<p class="definition">Definition in file <a class="el" href="mp__getddl_8sas_source.html">mp_getddl.sas</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 
