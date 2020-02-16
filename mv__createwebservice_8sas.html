@@ -151,7 +151,7 @@ parmcards4;
     %webout(OBJ,example2) * Object format, easier to work with ;
     %webout(CLOSE)
 ;;;;
-%mv_createwebservice(path=/Public/app/common, name=appInit, code=ft15f001)
+%mv_createwebservice(path=/Public/app/common,name=appInit,code=ft15f001,replace=YES)
 </pre><p>Notes: To minimise postgres requests, output json is stored in a temporary file and then sent to _webout in one go at the end.</p>
 <h4>Dependencies </h4>
 <ul>
