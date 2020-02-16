@@ -117,24 +117,12 @@ $(document).ready(function(){initNavTree('mm__webout_8sas.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Send data to/from SAS Stored Processes '; put '.  
+<p>Send data to/from SAS Stored Processes.  
 <a href="#details">More...</a></p>
 
 <p><a href="mm__webout_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Send data to/from SAS Stored Processes.</p>
-<p>'; put ' '; put '</p>
-<p>This macro should be added to the start of each Stored Process, '; put ' <b>immediately</b> followed by a call to: '; put ' '; put ' webout(OPEN) '; put ' '; put ' This will read all the input data and create same-named SAS datasets in the '; put ' WORK library. You can then insert your code, and send data back using the '; put ' following syntax: '; put ' '; put ' data some datasets; * make some data ; '; put ' retain some columns; '; put ' run; '; put ' '; put ' webout(ARR,some) * Array format, fast, suitable for large tables ; '; put ' webout(OBJ,datasets) * Object format, easier to work with ; '; put ' '; put ' Finally, wrap everything up send some helpful system variables too '; put ' '; put ' webout(CLOSE) '; put ' '; put ' '; put ' Notes: '; put ' '; put ' * The <code>webout()</code> macro is a simple wrapper for <code>mm_webout</code> to enable cross '; put ' platform compatibility. It may be removed if your use case does not involve '; put ' SAS Viya. '; put ' '; put '</p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in=</td><td>provide path or fileref to input csv '; put '</td></tr>
-    <tr><td class="paramname">out=</td><td>output path or fileref to output csv '; put '</td></tr>
-    <tr><td class="paramname">qchar=</td><td>quote char - hex code 22 is the double quote. '; put ' '; put ' </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section version"><dt>Version</dt><dd>9.3 '; put ' </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Allan Bowe '; put ' '; put '</dd></dl>
-<p>This macro should be added to the start of each Stored Process, immediately** followed by a call to:</p>
+<div class="textblock"><p>This macro should be added to the start of each Stored Process, immediately** followed by a call to:</p>
 <p>webout(OPEN)</p>
 <p>This will read all the input data and create same-named SAS datasets in the WORK library. You can then insert your code, and send data back using the following syntax:</p>
 <p>data some datasets; * make some data ; retain some columns; run;</p>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: viya/mv_createwebservice.sas File Reference</title>
+<title>MacroCore: base/mf_isblank.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mv__createwebservice_8sas.html','');});
+$(document).ready(function(){initNavTree('mf__isblank_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -113,73 +113,27 @@ $(document).ready(function(){initNavTree('mv__createwebservice_8sas.html','');})
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mv_createwebservice.sas File Reference</div>  </div>
+<div class="title">mf_isblank.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Creates a JobExecution web service if it doesn't already exist.  
+<p>Checks whether a macro variable is empty (blank)  
 <a href="#details">More...</a></p>
 
-<p><a href="mv__createwebservice_8sas_source.html">Go to the source code of this file.</a></p>
+<p><a href="mf__isblank_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>There are a number of steps involved in building a web service on viya: </p><pre class="fragment">%* Step 1 - load macros and obtain refresh token (must be ADMIN);
-
-filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
-%inc mc;
-%let client=new%sysfunc(ranuni(0));
-%let secret=MySecret;
-%mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)
-
-%* Step 2 - navigate to the url in the log and paste the access code below;
-
-%mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6)
-%mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)
-
-%* Step 3 - Now we can create some code and add it to a web service;
-
-filename ft15f001 temp;
-parmcards4;
-    %* do some sas, any inputs are now already WORK tables;
-    data example1 example2;
-      set sashelp.class;
-    run;
-    %* send data back;
-    %webout(ARR,example1) * Array format, fast, suitable for large tables ;
-    %webout(OBJ,example2) * Object format, easier to work with ;
-    %webout(CLOSE)
-;;;;
-%mv_createwebservice(path=/Public/app/common, name=appInit, code=ft15f001)
-</pre><p>Notes: To minimise postgres requests, output json is stored in a temporary file and then sent to _webout in one go at the end.</p>
-<h4>Dependencies </h4>
-<ul>
-<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
-<li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that foloder does not already exist. ">mv_createfolder.sas</a> </li>
-<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a></li>
-</ul>
+<div class="textblock"><p>Simply performs:</p>
+<p>sysevalf(superq(param)=,boolean)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path=</td><td>The full path (on SAS Drive) where the service will be created </td></tr>
-    <tr><td class="paramname">name=</td><td>The name of the service </td></tr>
-    <tr><td class="paramname">desc=</td><td>The description of the service </td></tr>
-    <tr><td class="paramname">precode=</td><td>Space separated list of filerefs, pointing to the code that needs to be attached to the beginning of the service </td></tr>
-    <tr><td class="paramname">code=</td><td>Fileref(s) of the actual code to be added </td></tr>
-    <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
-    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code.</td></tr>
+    <tr><td class="paramname">param</td><td>NAME of the macro variable to be checked (not value)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a></dd></dl>
-<h4>Dependencies </h4>
-<ul>
-<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
-<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
-<li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a> </li>
-</ul>
+<dl class="section return"><dt>Returns</dt><dd>output returns 1 (if blank) else 0</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>9.2 </dd></dl>
 
-<p class="definition">Definition in file <a class="el" href="mv__createwebservice_8sas_source.html">mv_createwebservice.sas</a>.</p>
+<p class="definition">Definition in file <a class="el" href="mf__isblank_8sas_source.html">mf_isblank.sas</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 
