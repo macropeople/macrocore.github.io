@@ -132,9 +132,10 @@ run;
 </pre><p>Finally, wrap everything up send some helpful system variables too </p><pre class="fragment">%mm_webout(CLOSE)
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in=</td><td>provide path or fileref to input csv </td></tr>
-    <tr><td class="paramname">out=</td><td>output path or fileref to output csv </td></tr>
-    <tr><td class="paramname">qchar=</td><td>quote char - hex code 22 is the double quote.</td></tr>
+    <tr><td class="paramname">action</td><td>Either OPEN, ARR, OBJ or CLOSE </td></tr>
+    <tr><td class="paramname">ds</td><td>The dataset to send back to the frontend </td></tr>
+    <tr><td class="paramname">_webout=</td><td>fileref for returning the json </td></tr>
+    <tr><td class="paramname">fref=</td><td>temp fref</td></tr>
   </table>
   </dd>
 </dl>
