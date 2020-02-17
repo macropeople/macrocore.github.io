@@ -138,8 +138,8 @@ $(document).ready(function(){initNavTree('mp__getddl_8sas.html','');});
   </dd>
 </dl>
 <p>Testing:</p>
-<p>data test(index=(pk=(x y)/unique /nomiss)); x=1; y='blah'; run; proc sql; describe table </p>
-<p>mp_getddl()</p>
+<p>data test(index=(pk=(x y)/unique /nomiss)); x=1; y='blah'; label x='blah'; run; proc sql; describe table </p>
+<p>mp_getddl(work,test,flavour=tsql)</p>
 <p>data <em>null</em>; infile getddl; input; list;run;</p>
 <dl class="section version"><dt>Version</dt><dd>9.3 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a> </dd></dl>
