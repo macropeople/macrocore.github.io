@@ -126,7 +126,9 @@ $(document).ready(function(){initNavTree('mm__assignlib_8sas.html','');});
 <p><a href="mm__assignlib_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Queries metadata to get the library NAME which can then be used in a libname statement with the meta engine.</p>
-<p>usage: </p><pre class="fragment">%mm_assign_lib(SOMEREF);
+<p>usage: </p><pre class="fragment">%macro mf_abort(iftrue,mac,msg);%put &amp;=msg;%mend;
+
+%mm_assignlib(SOMEREF)
 </pre><h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a></li>
@@ -134,8 +136,7 @@ $(document).ready(function(){initNavTree('mm__assignlib_8sas.html','');});
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">libref</td><td>the libref (not name) of the metadata library </td></tr>
-    <tr><td class="paramname">mDebug=</td><td>set to 1 to show debug messages in the log </td></tr>
-    <tr><td class="paramname">mAbort=</td><td>set to 1 to call mf_abort().</td></tr>
+    <tr><td class="paramname">mAbort=</td><td>If not assigned, HARD will call mf_abort(), SOFT will silently return</td></tr>
   </table>
   </dd>
 </dl>

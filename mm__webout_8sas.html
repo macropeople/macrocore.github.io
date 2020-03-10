@@ -125,20 +125,20 @@ $(document).ready(function(){initNavTree('mm__webout_8sas.html','');});
 
 <p><a href="mm__webout_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This macro should be added to the start of each Stored Process, immediately** followed by a call to: </p><pre class="fragment">%mm_webout(OPEN)
+<div class="textblock"><p>This macro should be added to the start of each Stored Process, immediately** followed by a call to: </p><pre class="fragment">%mm_webout(FETCH)
 </pre><p>This will read all the input data and create same-named SAS datasets in the WORK library. You can then insert your code, and send data back using the following syntax: </p><pre class="fragment">data some datasets; * make some data ;
 retain some columns;
 run;
 
+%mm_webout(OPEN)
 %mm_webout(ARR,some)  * Array format, fast, suitable for large tables ;
 %mm_webout(OBJ,datasets) * Object format, easier to work with ;
 </pre><p>Finally, wrap everything up send some helpful system variables too </p><pre class="fragment">%mm_webout(CLOSE)
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">action</td><td>Either OPEN, ARR, OBJ or CLOSE </td></tr>
+    <tr><td class="paramname">action</td><td>Either FETCH, OPEN, ARR, OBJ or CLOSE </td></tr>
     <tr><td class="paramname">ds</td><td>The dataset to send back to the frontend </td></tr>
-    <tr><td class="paramname">_webout=</td><td>fileref for returning the json </td></tr>
-    <tr><td class="paramname">fref=</td><td>temp fref</td></tr>
+    <tr><td class="paramname">dslabel=</td><td>value to use instead of the real name for sending to JSON</td></tr>
   </table>
   </dd>
 </dl>

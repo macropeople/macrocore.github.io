@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('mv__createwebservice_8sas.html','');})
 <div class="textblock"><p>There are a number of steps involved in building a web service on viya: </p><pre class="fragment">%* Step 1 - load macros and obtain refresh token (must be ADMIN);
 filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
 %inc mc;
-%let client=new%sysfunc(ranuni(0));
+%let client=new%sysfunc(ranuni(0),hex16.);
 %let secret=MySecret;
 %mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)
 
@@ -155,7 +155,9 @@ parmcards4;
 <li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
 <li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that foloder does not already exist. ">mv_createfolder.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a></li>
+<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
+<li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a> </li>
+<li><a class="el" href="mv__deletejes_8sas.html" title="Creates a job execution service if it does not already exist. ">mv_deletejes.sas</a></li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -171,15 +173,7 @@ parmcards4;
   </dd>
 </dl>
 <dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a></dd></dl>
-<h4>Dependencies </h4>
-<ul>
-<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
-<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
-<li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a> </li>
-<li><a class="el" href="mv__deletejes_8sas.html" title="Creates a job execution service if it does not already exist. ">mv_deletejes.sas</a> </li>
-</ul>
+<dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="mv__createwebservice_8sas_source.html">mv_createwebservice.sas</a>.</p>
 </div></div><!-- contents -->

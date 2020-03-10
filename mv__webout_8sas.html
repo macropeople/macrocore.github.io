@@ -125,11 +125,12 @@ $(document).ready(function(){initNavTree('mv__webout_8sas.html','');});
 
 <p><a href="mv__webout_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This macro should be added to the start of each Job Execution Service, <b>immediately</b> followed by a call to: </p><pre class="fragment">  %mv_webout(OPEN)
+<div class="textblock"><p>This macro should be added to the start of each Job Execution Service, <b>immediately</b> followed by a call to: </p><pre class="fragment">  %mv_webout(FETCH)
 </pre><p>This will read all the input data and create same-named SAS datasets in the WORK library. You can then insert your code, and send data back using the following syntax: </p><pre class="fragment">data some datasets; * make some data ;
 retain some columns;
 run;
 
+%mv_webout(OPEN)
 %mv_webout(ARR,some)  * Array format, fast, suitable for large tables ;
 %mv_webout(OBJ,datasets) * Object format, easier to work with ;
 %mv_webout(CLOSE)
@@ -138,7 +139,8 @@ run;
     <tr><td class="paramname">action</td><td>Either OPEN, ARR, OBJ or CLOSE </td></tr>
     <tr><td class="paramname">ds</td><td>The dataset to send back to the frontend </td></tr>
     <tr><td class="paramname">_webout=</td><td>fileref for returning the json </td></tr>
-    <tr><td class="paramname">fref=</td><td>temp fref</td></tr>
+    <tr><td class="paramname">fref=</td><td>temp fref </td></tr>
+    <tr><td class="paramname">dslabel=</td><td>value to use instead of the real name for sending to JSON</td></tr>
   </table>
   </dd>
 </dl>
