@@ -22,6 +22,7 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_getgroups.sas", "mm__getgroups_8sas.html", null ],
     [ "mm_getlibs.sas", "mm__getlibs_8sas.html", null ],
     [ "mm_getobjects.sas", "mm__getobjects_8sas.html", null ],
+    [ "mm_getpublictypes.sas", "mm__getpublictypes_8sas.html", null ],
     [ "mm_getrepos.sas", "mm__getrepos_8sas.html", null ],
     [ "mm_getroles.sas", "mm__getroles_8sas.html", null ],
     [ "mm_getservercontexts.sas", "mm__getservercontexts_8sas.html", null ],

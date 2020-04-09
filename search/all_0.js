@@ -50,6 +50,7 @@ var searchData=
   ['mm_5fgetgroups_2esas',['mm_getgroups.sas',['../mm__getgroups_8sas.html',1,'']]],
   ['mm_5fgetlibs_2esas',['mm_getlibs.sas',['../mm__getlibs_8sas.html',1,'']]],
   ['mm_5fgetobjects_2esas',['mm_getobjects.sas',['../mm__getobjects_8sas.html',1,'']]],
+  ['mm_5fgetpublictypes_2esas',['mm_getpublictypes.sas',['../mm__getpublictypes_8sas.html',1,'']]],
   ['mm_5fgetrepos_2esas',['mm_getrepos.sas',['../mm__getrepos_8sas.html',1,'']]],
   ['mm_5fgetroles_2esas',['mm_getroles.sas',['../mm__getroles_8sas.html',1,'']]],
   ['mm_5fgetservercontexts_2esas',['mm_getservercontexts.sas',['../mm__getservercontexts_8sas.html',1,'']]],

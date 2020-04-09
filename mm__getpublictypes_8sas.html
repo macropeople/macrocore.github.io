@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: meta/mm_tree.sas File Reference</title>
+<title>MacroCore: meta/mm_getpublictypes.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mm__tree_8sas.html','');});
+$(document).ready(function(){initNavTree('mm__getpublictypes_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -116,67 +116,23 @@ $(document).ready(function(){initNavTree('mm__tree_8sas.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mm_tree.sas File Reference</div>  </div>
+<div class="title">mm_getpublictypes.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Returns all folders / subfolder content for a particular root.  
+<p>Creates a dataset with all deployable public types.  
 <a href="#details">More...</a></p>
 
-<p><a href="mm__tree_8sas_source.html">Go to the source code of this file.</a></p>
+<p><a href="mm__getpublictypes_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Shows all members and SubTrees for a particular root.</p>
-<p>Model: </p><pre class="fragment">metauri char(64),
-name char(256) format=$256. informat=$256. label='name',
-path char(1024),
-publictype char(32),
-MetadataUpdated char(32),
-MetadataCreated char(32)
-</pre><p>Usage: </p><pre class="fragment">  load macros;
-filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
-%inc mc;
-
-  export everything;
-%mm_tree(root= ,outds=iwantthisdataset)
-
-  export everything in a specific folder;
-%mm_tree(root=%str(/my/folder) ,outds=stuff)
-
-  export only folders;
-%mm_tree(root=%str(/my/folder) ,types=Folder ,outds=stuf)
-
-  with specific types;
-%mm_tree(root=%str(/my/folder)
-  ,types= 
-      DeployedJob 
-      ExternalFile 
-      Folder 
-      Folder.SecuredData 
-      GeneratedTransform 
-      InformationMap.Relational 
-      Job 
-      Library 
-      Prompt 
-      StoredProcess
-      Table
-  ,outds=morestuff)
-</pre><h4>Dependencies </h4>
-<ul>
-<li><a class="el" href="mf__getquotedstr_8sas.html" title="Adds custom quotes / delimiters to a space delimited string. ">mf_getquotedstr.sas</a></li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">root=</td><td>the parent folder under which to return all contents </td></tr>
-    <tr><td class="paramname">outds=</td><td>the dataset to create that contains the list of directories </td></tr>
-    <tr><td class="paramname">types=</td><td>Space-seperated, unquoted list of types for filtering the output. <br />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section version"><dt>Version</dt><dd>9.4 </dd></dl>
+<div class="textblock"><p>More info: <a href="https://support.sas.com/documentation/cdl/en/bisag/65422/HTML/default/viewer.htm#n1nkrdzsq5iunln18bk2236istkb.htm">https://support.sas.com/documentation/cdl/en/bisag/65422/HTML/default/viewer.htm#n1nkrdzsq5iunln18bk2236istkb.htm</a></p>
+<p>Usage: </p><pre class="fragment">    dataset will contain one column - publictype ($64);
+  %mm_getpublictypes(outds=types)
+</pre><dl class="section return"><dt>Returns</dt><dd>outds= dataset containing all types</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>9.3 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe </dd></dl>
 
-<p class="definition">Definition in file <a class="el" href="mm__tree_8sas_source.html">mm_tree.sas</a>.</p>
+<p class="definition">Definition in file <a class="el" href="mm__getpublictypes_8sas_source.html">mm_getpublictypes.sas</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 
