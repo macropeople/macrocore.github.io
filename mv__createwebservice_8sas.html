@@ -152,7 +152,7 @@ parmcards4;
 </pre><p>Notes: To minimise postgres requests, output json is stored in a temporary file and then sent to _webout in one go at the end.</p>
 <h4>Dependencies </h4>
 <ul>
-<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a> </li>
+<li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
 <li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that foloder does not already exist. ">mv_createfolder.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
@@ -168,7 +168,8 @@ parmcards4;
     <tr><td class="paramname">code=</td><td>Fileref(s) of the actual code to be added </td></tr>
     <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
     <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
-    <tr><td class="paramname">replace=</td><td>select YES to replace any existing service in that location</td></tr>
+    <tr><td class="paramname">replace=</td><td>select YES to replace any existing service in that location </td></tr>
+    <tr><td class="paramname">adapter=</td><td>the macro uses the sasjs adapter by default. To use another adapter, add a (different) fileref here.</td></tr>
   </table>
   </dd>
 </dl>

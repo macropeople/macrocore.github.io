@@ -146,7 +146,6 @@ parmcards4;
 </pre><h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mm__createstp_8sas.html" title="Create a type 1 Stored Process (9.2 compatible) ">mm_createstp.sas</a> </li>
-<li><a class="el" href="mm__getwebappsrvprops_8sas.html" title="Retrieves properties of the SAS web app server  usage: ">mm_getwebappsrvprops.sas</a> </li>
 <li><a class="el" href="mf__getuser_8sas.html" title="Returns &amp;sysuserid in Workspace session,  &amp;_secureusername in Stored Process session. ">mf_getuser.sas</a> </li>
 <li><a class="el" href="mm__createfolder_8sas.html" title="Recursively create a metadata folder. ">mm_createfolder.sas</a> </li>
 <li><a class="el" href="mm__deletestp_8sas.html" title="Deletes a Stored Process using path as reference. ">mm_deletestp.sas</a></li>
@@ -160,7 +159,8 @@ parmcards4;
     <tr><td class="paramname">code=</td><td>Space seperated fileref(s) of the actual code to be added </td></tr>
     <tr><td class="paramname">server=</td><td>The server which will run the STP. Server name or uri is fine. </td></tr>
     <tr><td class="paramname">mDebug=</td><td>set to 1 to show debug messages in the log </td></tr>
-    <tr><td class="paramname">replace=</td><td>select YES to replace any existing service in that location</td></tr>
+    <tr><td class="paramname">replace=</td><td>select YES to replace any existing service in that location </td></tr>
+    <tr><td class="paramname">adapter=</td><td>the macro uses the sasjs adapter by default. To use another adapter, add a (different) fileref here.</td></tr>
   </table>
   </dd>
 </dl>

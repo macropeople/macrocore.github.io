@@ -125,8 +125,8 @@ $(document).ready(function(){initNavTree('mm__getfoldertree_8sas.html','');});
 
 <p><a href="mm__getfoldertree_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Shows all members and SubTrees recursively for a particular root. Usage:</p>
-<p>mm_getfoldertree(root=/My/Meta/Path, outds=iwantthisdataset)</p>
+<div class="textblock"><p>Shows all members and SubTrees recursively for a particular root. Note - for big sites, this returns a lot of data! So you may wish to reduce the logging to speed up the process (see example below) Usage:</p>
+<p>options ps=max nonotes nosource; mm_getfoldertree(root=/My/Meta/Path, outds=iwantthisdataset) options notes source;</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root=</td><td>the parent folder under which to return all contents </td></tr>

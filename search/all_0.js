@@ -2,8 +2,10 @@ var searchData=
 [
   ['mf_5fabort_2esas',['mf_abort.sas',['../mf__abort_8sas.html',1,'']]],
   ['mf_5fexistds_2esas',['mf_existds.sas',['../mf__existds_8sas.html',1,'']]],
+  ['mf_5fexistfeature_2esas',['mf_existfeature.sas',['../mf__existfeature_8sas.html',1,'']]],
   ['mf_5fexistvar_2esas',['mf_existvar.sas',['../mf__existvar_8sas.html',1,'']]],
   ['mf_5fexistvarlist_2esas',['mf_existvarlist.sas',['../mf__existvarlist_8sas.html',1,'']]],
+  ['mf_5fgetattrc_2esas',['mf_getattrc.sas',['../mf__getattrc_8sas.html',1,'']]],
   ['mf_5fgetattrn_2esas',['mf_getattrn.sas',['../mf__getattrn_8sas.html',1,'']]],
   ['mf_5fgetengine_2esas',['mf_getengine.sas',['../mf__getengine_8sas.html',1,'']]],
   ['mf_5fgetfilesize_2esas',['mf_getfilesize.sas',['../mf__getfilesize_8sas.html',1,'']]],
@@ -58,6 +60,7 @@ var searchData=
   ['mm_5fgettypes_2esas',['mm_gettypes.sas',['../mm__gettypes_8sas.html',1,'']]],
   ['mm_5fgetusers_2esas',['mm_getusers.sas',['../mm__getusers_8sas.html',1,'']]],
   ['mm_5fgetwebappsrvprops_2esas',['mm_getwebappsrvprops.sas',['../mm__getwebappsrvprops_8sas.html',1,'']]],
+  ['mm_5ftree_2esas',['mm_tree.sas',['../mm__tree_8sas.html',1,'']]],
   ['mm_5fupdateappextension_2esas',['mm_updateappextension.sas',['../mm__updateappextension_8sas.html',1,'']]],
   ['mm_5fupdatedocument_2esas',['mm_updatedocument.sas',['../mm__updatedocument_8sas.html',1,'']]],
   ['mm_5fupdatestpservertype_2esas',['mm_updatestpservertype.sas',['../mm__updatestpservertype_8sas.html',1,'']]],
@@ -91,7 +94,10 @@ var searchData=
   ['mv_5fgetaccesstoken_2esas',['mv_getaccesstoken.sas',['../mv__getaccesstoken_8sas.html',1,'']]],
   ['mv_5fgetapptoken_2esas',['mv_getapptoken.sas',['../mv__getapptoken_8sas.html',1,'']]],
   ['mv_5fgetfoldermembers_2esas',['mv_getfoldermembers.sas',['../mv__getfoldermembers_8sas.html',1,'']]],
+  ['mv_5fgetgroupmembers_2esas',['mv_getgroupmembers.sas',['../mv__getgroupmembers_8sas.html',1,'']]],
   ['mv_5fgetgroups_2esas',['mv_getgroups.sas',['../mv__getgroups_8sas.html',1,'']]],
   ['mv_5fgetrefreshtoken_2esas',['mv_getrefreshtoken.sas',['../mv__getrefreshtoken_8sas.html',1,'']]],
+  ['mv_5fgetusergroups_2esas',['mv_getusergroups.sas',['../mv__getusergroups_8sas.html',1,'']]],
+  ['mv_5fgetusers_2esas',['mv_getusers.sas',['../mv__getusers_8sas.html',1,'']]],
   ['mv_5fwebout_2esas',['mv_webout.sas',['../mv__webout_8sas.html',1,'']]]
 ];
