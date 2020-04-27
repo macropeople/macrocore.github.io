@@ -126,18 +126,29 @@ $(document).ready(function(){initNavTree('mv__getusers_8sas.html','');});
 <p><a href="mv__getusers_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>First, be sure you have an access token (which requires an app token).</p>
-<p>Using the macros here:</p>
-<p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>An administrator needs to set you up with an access code:</p>
-<p>let client=someclient; let secret=MySecret; mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)</p>
-<p>Navigate to the url from the log (opting in to the groups) and paste the access code below:</p>
-<p>mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6) mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)</p>
-<p>Now we can run the macro!</p>
-<p>mv_getusers(outds=users)</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Using the macros here: </p><pre class="fragment">filename mc url
+"https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+</pre><p>An administrator needs to set you up with an access code: </p><pre class="fragment">%let client=someclient;
+%let secret=MySecret;
+%mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)
+</pre><p>Navigate to the url from the log (opting in to the groups) and paste the access code below: </p><pre class="fragment">%mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6)
+%mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)
+</pre><p>Now we can run the macro! </p><pre class="fragment">%mv_getusers(outds=users)
+</pre><p>Output (lengths are dynamic): </p><pre class="fragment">ordinal_root num,
+ordinal_items num,
+version num,
+id char(20),
+name char(23),
+providerId char(4),
+type char(4),
+creationTimeStamp char(24),
+modifiedTimeStamp char(24),
+state char(6)
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
-    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
+    <tr><td class="paramname">grant_type=</td><td>valid values: password authorization_code detect - will check if access_token exists, if not will use sas_services if a SASStudioV session else authorization_code. Default option. sas_services - will use oauth_bearer=sas_services</td></tr>
     <tr><td class="paramname">outds=</td><td>The library.dataset to be created that contains the list of groups</td></tr>
   </table>
   </dd>
@@ -149,6 +160,7 @@ $(document).ready(function(){initNavTree('mv__getusers_8sas.html','');});
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
+<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 </ul>
 
 <p class="definition">Definition in file <a class="el" href="mv__getusers_8sas_source.html">mv_getusers.sas</a>.</p>

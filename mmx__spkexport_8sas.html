@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: base/mf_verifymacvars.sas File Reference</title>
+<title>MacroCore: metax/mmx_spkexport.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mf__verifymacvars_8sas.html','');});
+$(document).ready(function(){initNavTree('mmx__spkexport_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -116,44 +116,53 @@ $(document).ready(function(){initNavTree('mf__verifymacvars_8sas.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mf_verifymacvars.sas File Reference</div>  </div>
+<div class="title">mmx_spkexport.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Checks if a set of macro variables exist / contain values.  
+<p>Exports everything in a particular metadata folder.  
 <a href="#details">More...</a></p>
 
-<p><a href="mf__verifymacvars_8sas_source.html">Go to the source code of this file.</a></p>
+<p><a href="mmx__spkexport_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Writes ERROR to log if abortType is SOFT, else will call mf_abort. Usage: </p><pre class="fragment">%let var1=x;
-%let var2=y;
-%put %mf_verifymacvars(var1 var2);
-</pre><p>Returns: </p><blockquote class="doxtable">
-<p>1 </p>
-</blockquote>
-<h4>Dependencies </h4>
+<div class="textblock"><p>Will export everything in a metadata folder to a specified location. Note - the batch tools require a username and password. For security, these are expected to have been provided in a protected directory.</p>
+<p>Usage: </p><pre class="fragment">%* import the macros (or make them available some other way);
+filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+
+%* create sample text file as input to the macro;
+filename tmp temp;
+data _null_;
+  file tmp;
+  put '%let mmxuser=sasdemo;';
+  put '%let mmxpass=Mars321';
+run;
+
+filename outref "%sysfunc(pathname(work))";
+%mmx_spkexport(metaloc=%str(/30.Projects/3001.Internal/300115.DataController/dc1)
+    ,secureref=tmp
+    ,outspkpath=%str(/tmp)
+)
+</pre><h4>Dependencies </h4>
 <ul>
-<li><a class="el" href="mf__abort_8sas.html" title="abort gracefully according to context ">mf_abort.sas</a></li>
+<li><a class="el" href="mf__loc_8sas.html" title="Returns physical location of various SAS items. ">mf_loc.sas</a> </li>
+<li><a class="el" href="mm__tree_8sas.html" title="Returns all folders / subfolder content for a particular root. ">mm_tree.sas</a> </li>
+<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
+<li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a></li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">verifyvars</td><td>space separated list of macro variable names </td></tr>
-    <tr><td class="paramname">makeupcase=</td><td>set to YES to convert all variable VALUES to uppercase. </td></tr>
-    <tr><td class="paramname">mAbort=</td><td>Abort Type. Default is SOFT (writes err to log). Set to any other value to call mf_abort (which can be configured to abort in various fashions according to context).</td></tr>
+    <tr><td class="paramname">metaloc=</td><td>the metadata folder to export </td></tr>
+    <tr><td class="paramname">secureref=</td><td>fileref containing the username / password (should point to a file in a secure location) </td></tr>
+    <tr><td class="paramname">outspkname=</td><td>name of the spk to be created (default is mmxport). </td></tr>
+    <tr><td class="paramname">outspkpath=</td><td>directory in which to create the SPK. Default is WORK.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>will not be able to verify the following variables due to naming clash!<ul>
-<li>verifyVars</li>
-<li>verifyVar</li>
-<li>verifyIterator</li>
-<li>makeUpcase</li>
-</ul>
-</dd></dl>
-<dl class="section version"><dt>Version</dt><dd>9.2 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>9.4 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe </dd></dl>
 
-<p class="definition">Definition in file <a class="el" href="mf__verifymacvars_8sas_source.html">mf_verifymacvars.sas</a>.</p>
+<p class="definition">Definition in file <a class="el" href="mmx__spkexport_8sas_source.html">mmx_spkexport.sas</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 

@@ -33,6 +33,7 @@ var dir_0d92069d5a23b1d3125c326d74f1a07c =
     [ "mm_gettypes.sas", "mm__gettypes_8sas.html", null ],
     [ "mm_getusers.sas", "mm__getusers_8sas.html", null ],
     [ "mm_getwebappsrvprops.sas", "mm__getwebappsrvprops_8sas.html", null ],
+    [ "mm_spkexport.sas", "mm__spkexport_8sas.html", null ],
     [ "mm_tree.sas", "mm__tree_8sas.html", null ],
     [ "mm_updateappextension.sas", "mm__updateappextension_8sas.html", null ],
     [ "mm_updatedocument.sas", "mm__updatedocument_8sas.html", null ],

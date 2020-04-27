@@ -145,6 +145,9 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
 %* export only folders;
 %mm_tree(root=%str(/my/folder) ,types=Folder ,outds=stuf)
 
+%* show only exportable content;
+%mm_tree(root=%str(/) ,types=EXPORTABLE ,outds=exportable)
+
 %* with specific types;
 %mm_tree(root=%str(/my/folder)
   ,types= 
@@ -162,14 +165,16 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
   ,outds=morestuff)
 </pre><h4>Dependencies </h4>
 <ul>
-<li><a class="el" href="mf__getquotedstr_8sas.html" title="Adds custom quotes / delimiters to a space delimited string. ">mf_getquotedstr.sas</a></li>
+<li><a class="el" href="mf__getquotedstr_8sas.html" title="Adds custom quotes / delimiters to a space delimited string. ">mf_getquotedstr.sas</a> </li>
+<li><a class="el" href="mm__getpublictypes_8sas.html" title="Creates a dataset with all deployable public types. ">mm_getpublictypes.sas</a> </li>
+<li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a></li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root=</td><td>the parent folder under which to return all contents </td></tr>
     <tr><td class="paramname">outds=</td><td>the dataset to create that contains the list of directories </td></tr>
-    <tr><td class="paramname">types=</td><td>Space-seperated, unquoted list of types for filtering the output. <br />
- </td></tr>
+    <tr><td class="paramname">types=</td><td>Space-seperated, unquoted list of types for filtering the output. Special types: <br />
+ ALl - return all types (the default) EXPORTABLE - return only the content types that can be exported in an SPK</td></tr>
   </table>
   </dd>
 </dl>

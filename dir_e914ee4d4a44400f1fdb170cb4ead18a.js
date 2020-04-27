@@ -25,6 +25,7 @@ var dir_e914ee4d4a44400f1fdb170cb4ead18a =
     [ "mf_isblank.sas", "mf__isblank_8sas.html", null ],
     [ "mf_loc.sas", "mf__loc_8sas.html", null ],
     [ "mf_mkdir.sas", "mf__mkdir_8sas.html", null ],
+    [ "mf_mval.sas", "mf__mval_8sas.html", null ],
     [ "mf_nobs.sas", "mf__nobs_8sas.html", null ],
     [ "mf_uid.sas", "mf__uid_8sas.html", null ],
     [ "mf_verifymacvars.sas", "mf__verifymacvars_8sas.html", null ],
@@ -38,6 +39,7 @@ var dir_e914ee4d4a44400f1fdb170cb4ead18a =
     [ "mp_ds2cards.sas", "mp__ds2cards_8sas.html", "mp__ds2cards_8sas" ],
     [ "mp_getddl.sas", "mp__getddl_8sas.html", null ],
     [ "mp_getmaxvarlengths.sas", "mp__getmaxvarlengths_8sas.html", null ],
+    [ "mp_jsonout.sas", "mp__jsonout_8sas.html", null ],
     [ "mp_lib2cards.sas", "mp__lib2cards_8sas.html", null ],
     [ "mp_perflog.sas", "mp__perflog_8sas.html", null ],
     [ "mp_recursivejoin.sas", "mp__recursivejoin_8sas.html", null ],
@@ -47,6 +49,7 @@ var dir_e914ee4d4a44400f1fdb170cb4ead18a =
     [ "mp_searchdata.sas", "mp__searchdata_8sas.html", null ],
     [ "mp_setkeyvalue.sas", "mp__setkeyvalue_8sas.html", null ],
     [ "mp_stprequests.sas", "mp__stprequests_8sas.html", null ],
+    [ "mp_streamfile.sas", "mp__streamfile_8sas.html", null ],
     [ "mp_unzip.sas", "mp__unzip_8sas.html", null ],
     [ "mp_zip.sas", "mp__zip_8sas.html", null ]
 ];

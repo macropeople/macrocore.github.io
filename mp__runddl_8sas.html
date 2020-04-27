@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('mp__runddl_8sas.html','');});
 <div class="textblock"><p>When delivering projects there should be seperation between the DDL used to generate the tables and the sample data used to populate them.</p>
 <p>This macro expects certain folder structure - eg:</p>
 <p>rootlib |&ndash; LIBREF1 | |__ mytable.ddl | |__ someothertable.ddl |&ndash; LIBREF2 | |__ table1.ddl | |__ table2.ddl |&ndash; LIBREF3 |__ table3.ddl |__ table4.ddl</p>
-<p>Only files with the .ddl suffix are executed. The parent folder name is used as the libref. Files should NOT contain the <code>proc sql</code> statement - this is to prevent statements being executed if there is an error condition.</p>
+<p>Only files with the .ddl suffix are executed. The parent folder name is used as the libref. Files should NOT contain the <code>proc sql</code> statement - this is to prevent statements being executed if there is an err condition.</p>
 <p>Usage:</p>
 <p>mp_runddl(/some/rootlib) * execute all libs ;</p>
 <p>mp_runddl(/some/rootlib, inc=LIBREF1 LIBREF2) * include only these libs;</p>
