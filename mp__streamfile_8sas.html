@@ -126,10 +126,11 @@ $(document).ready(function(){initNavTree('mp__streamfile_8sas.html','');});
 <p><a href="mp__streamfile_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Will set headers using appropriate functions (SAS 9 vs Viya) and send content as a binary stream.</p>
-<p>Usage:</p>
-<p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>mp_streamfile(contenttype=csv,inloc=/some/where.txt,outname=myfile.txt)</p>
-<h4>Dependencies </h4>
+<p>Usage: </p><pre class="fragment">filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+
+%mp_streamfile(contenttype=csv,inloc=/some/where.txt,outname=myfile.txt)
+</pre><h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mp__binarycopy_8sas.html" title="Copy any file using binary input / output streams. ">mp_binarycopy.sas</a></li>
