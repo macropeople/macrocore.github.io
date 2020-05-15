@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"mv__getfoldermembers_8sas.html":[0,3,6],
+"mv__getfoldermembers_8sas.html#a9c8d0d7333b07462d24a095f73b33120":[0,3,6,0],
+"mv__getfoldermembers_8sas_source.html":[0,3,6],
+"mv__getgroupmembers_8sas.html":[0,3,7],
+"mv__getgroupmembers_8sas.html#a9c8d0d7333b07462d24a095f73b33120":[0,3,7,0],
+"mv__getgroupmembers_8sas_source.html":[0,3,7],
 "mv__getgroups_8sas.html":[0,3,8],
 "mv__getgroups_8sas.html#a9c8d0d7333b07462d24a095f73b33120":[0,3,8,0],
 "mv__getgroups_8sas_source.html":[0,3,8],
