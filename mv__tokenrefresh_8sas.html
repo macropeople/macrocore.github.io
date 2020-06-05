@@ -126,10 +126,24 @@ $(document).ready(function(){initNavTree('mv__tokenrefresh_8sas.html','');});
 <p><a href="mv__tokenrefresh_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Before an access token can be obtained, a refresh token is required For that, check out the <code>mv_tokenauth</code> macro.</p>
-<p>Usage: </p><pre class="fragment">prep work - register client, get refresh token, save it for later use ;
-</pre><p> mv_registerclient(outds=client) mv_tokenauth(inds=client,code=wKDZYTEPK6) data <em>null</em>; file "~/refresh.token"; put "&amp;refresh_token"; run;</p>
-<p>now do the things n stuff; data <em>null</em>; infile "~/refresh.token"; input; call symputx('refresh_token',<em>infile</em>); run; mv_tokenrefresh(client_id=&amp;client ,client_secret=&amp;secret )</p>
-<p>A great article for explaining all these steps is available here:</p>
+<p>Usage: </p><pre class="fragment">  prep work - register client, get refresh token, save it for later use ;
+%mv_registerclient(outds=client)
+%mv_tokenauth(inds=client,code=wKDZYTEPK6)
+data _null_;
+file "~/refresh.token";
+put "&amp;refresh_token";
+run;
+
+  now do the things n stuff;
+data _null_;
+  infile "~/refresh.token";
+  input;
+  call symputx('refresh_token',_infile_);
+run;
+%mv_tokenrefresh(client_id=&amp;client
+  ,client_secret=&amp;secret
+)
+</pre><p>A great article for explaining all these steps is available here:</p>
 <p><a href="https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/">https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

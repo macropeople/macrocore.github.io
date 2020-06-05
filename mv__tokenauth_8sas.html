@@ -128,11 +128,14 @@ $(document).ready(function(){initNavTree('mv__tokenauth_8sas.html','');});
 <div class="textblock"><p>Before a Refresh Token can be obtained, the client must be registered by an administrator. This can be done using the <code>mv_registerclient</code> macro, after which the user must visit a URL to get an additional code (if using oauth).</p>
 <p>That code (or username / password) is used here to get the Refresh Token (and an initial Access Token). THIS MACRO CAN ONLY BE USED ONCE - further access tokens can be obtained using the <code>mv_gettokenrefresh</code> macro.</p>
 <p>Access tokens expire frequently (every 10 hours or so) whilst refresh tokens expire periodically (every month or so). This is all configurable.</p>
-<p>Usage:</p>
-<p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>mv_registerclient(outds=clientinfo)</p>
-<p>mv_tokenauth(inds=clientinfo,code=LD39EpalOf)</p>
-<p>A great article for explaining all these steps is available here:</p>
+<p>Usage: </p><pre class="fragment">filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+
+
+%mv_registerclient(outds=clientinfo)
+
+%mv_tokenauth(inds=clientinfo,code=LD39EpalOf)
+</pre><p>A great article for explaining all these steps is available here:</p>
 <p><a href="https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/">https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

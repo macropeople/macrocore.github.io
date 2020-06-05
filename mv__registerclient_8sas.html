@@ -129,11 +129,19 @@ $(document).ready(function(){initNavTree('mv__registerclient_8sas.html','');});
 <p>more info: <a href="https://developer.sas.com/reference/auth/#register">https://developer.sas.com/reference/auth/#register</a> and: <a href="http://proc-x.com/2019/01/authentication-to-sas-viya-a-couple-of-approaches/">http://proc-x.com/2019/01/authentication-to-sas-viya-a-couple-of-approaches/</a></p>
 <p>The default viyaroot location is /opt/sas/viya/config</p>
 <p>M3 required due to proc http headers</p>
-<p>Usage:</p>
-<p>%* compile macros; filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>%* specific client with just openid scope mv_registerclient(client_id=YourClient ,client_secret=YourSecret ,scopes=openid )</p>
-<p>%* generate random client details with all scopes mv_registerclient(scopes=openid *)</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Usage: </p><pre class="fragment">%* compile macros;
+filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+
+%* specific client with just openid scope
+%mv_registerclient(client_id=YourClient
+  ,client_secret=YourSecret
+  ,scopes=openid
+)
+
+%* generate random client details with all scopes
+%mv_registerclient(scopes=openid *)
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">client_id=</td><td>The client name. Auto generated if blank. </td></tr>
     <tr><td class="paramname">client_secret=</td><td>Client secret Auto generated if client is blank. </td></tr>
