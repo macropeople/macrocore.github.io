@@ -128,13 +128,10 @@ $(document).ready(function(){initNavTree('mv__createwebservice_8sas.html','');})
 <div class="textblock"><p>There are a number of steps involved in building a web service on viya: </p><pre class="fragment">%* Step 1 - load macros and obtain refresh token (must be ADMIN);
 filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
 %inc mc;
-%let client=new%sysfunc(ranuni(0),hex16.);
-%let secret=MySecret;
-%mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)
+%mv_registerclient(outds=client)
 
 %* Step 2 - navigate to the url in the log and paste the access code below;
-%mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6)
-%mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)
+%mv_tokenauth(inds=client,code=wKDZYTEPK6)
 
 %* Step 3 - Now we can create some code and add it to a web service;
 filename ft15f001 temp;
@@ -154,7 +151,7 @@ parmcards4;
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that foloder does not already exist. ">mv_createfolder.sas</a> </li>
+<li><a class="el" href="mv__createfolder_8sas.html" title="Creates a viya folder if that folder does not already exist. ">mv_createfolder.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
@@ -170,7 +167,7 @@ parmcards4;
     <tr><td class="paramname">code=</td><td>Fileref(s) of the actual code to be added </td></tr>
     <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
     <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
-    <tr><td class="paramname">replace=</td><td>select YES to replace any existing service in that location </td></tr>
+    <tr><td class="paramname">replace=</td><td>select NO to avoid replacing any existing service in that location </td></tr>
     <tr><td class="paramname">adapter=</td><td>the macro uses the sasjs adapter by default. To use another adapter, add a (different) fileref here.</td></tr>
   </table>
   </dd>

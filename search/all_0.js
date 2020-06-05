@@ -99,6 +99,7 @@ var searchData=
   ['mp_5fzip_2esas',['mp_zip.sas',['../mp__zip_8sas.html',1,'']]],
   ['mv_5fcreatefolder_2esas',['mv_createfolder.sas',['../mv__createfolder_8sas.html',1,'']]],
   ['mv_5fcreatewebservice_2esas',['mv_createwebservice.sas',['../mv__createwebservice_8sas.html',1,'']]],
+  ['mv_5fdeletefoldermember_2esas',['mv_deletefoldermember.sas',['../mv__deletefoldermember_8sas.html',1,'']]],
   ['mv_5fdeletejes_2esas',['mv_deletejes.sas',['../mv__deletejes_8sas.html',1,'']]],
   ['mv_5fdeleteviyafolder_2esas',['mv_deleteviyafolder.sas',['../mv__deleteviyafolder_8sas.html',1,'']]],
   ['mv_5fgetaccesstoken_2esas',['mv_getaccesstoken.sas',['../mv__getaccesstoken_8sas.html',1,'']]],
@@ -109,5 +110,8 @@ var searchData=
   ['mv_5fgetrefreshtoken_2esas',['mv_getrefreshtoken.sas',['../mv__getrefreshtoken_8sas.html',1,'']]],
   ['mv_5fgetusergroups_2esas',['mv_getusergroups.sas',['../mv__getusergroups_8sas.html',1,'']]],
   ['mv_5fgetusers_2esas',['mv_getusers.sas',['../mv__getusers_8sas.html',1,'']]],
+  ['mv_5fregisterclient_2esas',['mv_registerclient.sas',['../mv__registerclient_8sas.html',1,'']]],
+  ['mv_5ftokenauth_2esas',['mv_tokenauth.sas',['../mv__tokenauth_8sas.html',1,'']]],
+  ['mv_5ftokenrefresh_2esas',['mv_tokenrefresh.sas',['../mv__tokenrefresh_8sas.html',1,'']]],
   ['mv_5fwebout_2esas',['mv_webout.sas',['../mv__webout_8sas.html',1,'']]]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MacroCore: viya/mv_getgroups.sas File Reference</title>
+<title>MacroCore: viya/mv_deletefoldermember.sas File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('mv__getgroups_8sas.html','');});
+$(document).ready(function(){initNavTree('mv__deletefoldermember_8sas.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -116,29 +116,25 @@ $(document).ready(function(){initNavTree('mv__getgroups_8sas.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mv_getgroups.sas File Reference</div>  </div>
+<div class="title">mv_deletefoldermember.sas File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Creates a dataset with a list of viya groups.  
+<p>Deletes an item in a Viya folder.  
 <a href="#details">More...</a></p>
 
-<p><a href="mv__getgroups_8sas_source.html">Go to the source code of this file.</a></p>
+<p><a href="mv__deletefoldermember_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>First, be sure you have an access token (which requires an app token).</p>
-<p>Using the macros here:</p>
+<div class="textblock"><p>If not executed in Studio 5+ will expect oauth token in a global macro variable (default ACCESS_TOKEN).</p>
 <p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>An administrator needs to set you up with an access code:</p>
-<p>mv_registerclient(outds=client)</p>
-<p>Navigate to the url from the log (opting in to the groups) and paste the access code below:</p>
-<p>mv_tokenauth(inds=client,code=wKDZYTEPK6)</p>
-<p>Now we can run the macro!</p>
-<p>mv_getgroups()</p>
+<p>mv_createwebservice(path=/Public/test, name=blah) mv_deletejes(path=/Public/test, name=blah)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">path=</td><td>The full path of the folder containing the item to be deleted </td></tr>
+    <tr><td class="paramname">name=</td><td>The name of the item to be deleted </td></tr>
+    <tr><td class="paramname">contenttype=</td><td>The contenttype of the item, eg: file, jobDefinition </td></tr>
     <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
-    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
-    <tr><td class="paramname">outds=</td><td>The library.dataset to be created that contains the list of groups</td></tr>
+    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is "detect" (which will run in Studio 5+ without a token).</td></tr>
   </table>
   </dd>
 </dl>
@@ -147,12 +143,13 @@ $(document).ready(function(){initNavTree('mv__getgroups_8sas.html','');});
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
+<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
+<li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a> </li>
 </ul>
 
-<p class="definition">Definition in file <a class="el" href="mv__getgroups_8sas_source.html">mv_getgroups.sas</a>.</p>
+<p class="definition">Definition in file <a class="el" href="mv__deletefoldermember_8sas_source.html">mv_deletefoldermember.sas</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 

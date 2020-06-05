@@ -120,36 +120,16 @@ $(document).ready(function(){initNavTree('mv__getaccesstoken_8sas.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Get an additional access token using a refresh token.  
+<p>deprecated - replaced by <a class="el" href="mv__tokenrefresh_8sas.html" title="Get an additional access token using a refresh token. ">mv_tokenrefresh.sas</a>  
 <a href="#details">More...</a></p>
 
 <p><a href="mv__getaccesstoken_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Before an access token can be obtained, a refresh token is required For that, check out the <code>mv_getrefreshtoken</code> macro.</p>
-<p>Usage: </p><pre class="fragment">prep work - register client, get refresh token, save it for later use ;
-</pre><p> let client=testin88gtss; let secret=MySecret; mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret) mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6) data <em>null</em>; file "~/refresh.token"; put "&amp;refresh_token"; run;</p>
-<p>now do the things n stuff; data <em>null</em>; infile "~/refresh.token"; input; call symputx('refresh_token',<em>infile</em>); run; mv_getaccesstoken(client_id=&amp;client ,client_secret=&amp;secret )</p>
-<p>A great article for explaining all these steps is available here:</p>
-<p><a href="https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/">https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">client_id=</td><td>The client name </td></tr>
-    <tr><td class="paramname">client_secret=</td><td>client secret </td></tr>
-    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
-    <tr><td class="paramname">user=</td><td>If grant_type=password then provide the username here </td></tr>
-    <tr><td class="paramname">pass=</td><td>If grant_type=password then provide the password here </td></tr>
-    <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
-    <tr><td class="paramname">refresh_token_var=</td><td>The global macro variable containing the refresh token</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
+<div class="textblock"><dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a></dd></dl>
 <h4>Dependencies </h4>
 <ul>
-<li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
-<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
+<li><a class="el" href="mv__getaccesstoken_8sas.html" title="deprecated - replaced by mv_tokenrefresh.sas ">mv_getaccesstoken.sas</a> </li>
 </ul>
 
 <p class="definition">Definition in file <a class="el" href="mv__getaccesstoken_8sas_source.html">mv_getaccesstoken.sas</a>.</p>

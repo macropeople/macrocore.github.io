@@ -129,11 +129,8 @@ $(document).ready(function(){initNavTree('mv__getusers_8sas.html','');});
 <p>Using the macros here: </p><pre class="fragment">filename mc url
 "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
 %inc mc;
-</pre><p>An administrator needs to set you up with an access code: </p><pre class="fragment">%let client=someclient;
-%let secret=MySecret;
-%mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)
-</pre><p>Navigate to the url from the log (opting in to the groups) and paste the access code below: </p><pre class="fragment">%mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=wKDZYTEPK6)
-%mv_getaccesstoken(client_id=&amp;client,client_secret=&amp;secret)
+</pre><p>An administrator needs to set you up with an access code: </p><pre class="fragment">%mv_registerclient(outds=client)
+</pre><p>Navigate to the url from the log (opting in to the groups) and paste the access code below: </p><pre class="fragment">%mv_tokenauth(inds=client,code=wKDZYTEPK6)
 </pre><p>Now we can run the macro! </p><pre class="fragment">%mv_getusers(outds=users)
 </pre><p>Output (lengths are dynamic): </p><pre class="fragment">ordinal_root num,
 ordinal_items num,

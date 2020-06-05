@@ -120,40 +120,16 @@ $(document).ready(function(){initNavTree('mv__getrefreshtoken_8sas.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Get Refresh Token (and initial access token)  
+<p>deprecated - replaced by <a class="el" href="mv__tokenauth_8sas.html" title="Get initial Refresh and Access Tokens. ">mv_tokenauth.sas</a>  
 <a href="#details">More...</a></p>
 
 <p><a href="mv__getrefreshtoken_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Before a Refresh Token can be obtained, the client must be registered by an administrator. This can be done using the <code>mv_getapptoken</code> macro, after which the user must visit a URL to get an additional code (if using oauth).</p>
-<p>That code (or username / password) is used here to get the Refresh Token (and an initial Access Token). THIS MACRO CAN ONLY BE USED ONCE - further access tokens can be obtained using the <code>mv_getaccesstoken</code> macro.</p>
-<p>Access tokens expire frequently (every 10 hours or so) whilst refresh tokens expire periodically (every month or so). This is all configurable.</p>
-<p>Usage:</p>
-<p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>let client=testings; let secret=MySecret;</p>
-<p>mv_getapptoken(client_id=&amp;client,client_secret=&amp;secret)</p>
-<p>mv_getrefreshtoken(client_id=&amp;client,client_secret=&amp;secret,code=LD39EpalOf)</p>
-<p>A great article for explaining all these steps is available here:</p>
-<p><a href="https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/">https://blogs.sas.com/content/sgf/2019/01/25/authentication-to-sas-viya/</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">client_id=</td><td>The client name </td></tr>
-    <tr><td class="paramname">client_secret=</td><td>client secret </td></tr>
-    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
-    <tr><td class="paramname">code=</td><td>If grant_type=authorization_code then provide the necessary code here </td></tr>
-    <tr><td class="paramname">user=</td><td>If grant_type=password then provide the username here </td></tr>
-    <tr><td class="paramname">pass=</td><td>If grant_type=password then provide the password here </td></tr>
-    <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
-    <tr><td class="paramname">refresh_token_var=</td><td>The global macro variable to contain the refresh token</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
+<div class="textblock"><dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a></dd></dl>
 <h4>Dependencies </h4>
 <ul>
-<li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
+<li><a class="el" href="mv__tokenauth_8sas.html" title="Get initial Refresh and Access Tokens. ">mv_tokenauth.sas</a> </li>
 </ul>
 
 <p class="definition">Definition in file <a class="el" href="mv__getrefreshtoken_8sas_source.html">mv_getrefreshtoken.sas</a>.</p>

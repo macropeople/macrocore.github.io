@@ -127,10 +127,13 @@ $(document).ready(function(){initNavTree('dir_f3c9615c6d389fd64e9075885fcd8e6e.h
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:mv__createfolder_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__createfolder_8sas.html">mv_createfolder.sas</a> <a href="mv__createfolder_8sas_source.html">[code]</a></td></tr>
-<tr class="memdesc:mv__createfolder_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a viya folder if that foloder does not already exist. <br /></td></tr>
+<tr class="memdesc:mv__createfolder_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a viya folder if that folder does not already exist. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__createwebservice_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__createwebservice_8sas.html">mv_createwebservice.sas</a> <a href="mv__createwebservice_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__createwebservice_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a JobExecution web service if it doesn't already exist. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:mv__deletefoldermember_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__deletefoldermember_8sas.html">mv_deletefoldermember.sas</a> <a href="mv__deletefoldermember_8sas_source.html">[code]</a></td></tr>
+<tr class="memdesc:mv__deletefoldermember_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes an item in a Viya folder. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__deletejes_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__deletejes_8sas.html">mv_deletejes.sas</a> <a href="mv__deletejes_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__deletejes_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a job execution service if it does not already exist. <br /></td></tr>
@@ -139,10 +142,10 @@ Files</h2></td></tr>
 <tr class="memdesc:mv__deleteviyafolder_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a viya folder if that folder does not already exist. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getaccesstoken_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getaccesstoken_8sas.html">mv_getaccesstoken.sas</a> <a href="mv__getaccesstoken_8sas_source.html">[code]</a></td></tr>
-<tr class="memdesc:mv__getaccesstoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an additional access token using a refresh token. <br /></td></tr>
+<tr class="memdesc:mv__getaccesstoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">deprecated - replaced by <a class="el" href="mv__tokenrefresh_8sas.html" title="Get an additional access token using a refresh token. ">mv_tokenrefresh.sas</a> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getapptoken_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getapptoken_8sas.html">mv_getapptoken.sas</a> <a href="mv__getapptoken_8sas_source.html">[code]</a></td></tr>
-<tr class="memdesc:mv__getapptoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an App Token and Secret. <br /></td></tr>
+<tr class="memdesc:mv__getapptoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">deprecated - replaced by <a class="el" href="mv__registerclient_8sas.html" title="Register Client and Secret (admin task) ">mv_registerclient.sas</a> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getfoldermembers_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getfoldermembers_8sas.html">mv_getfoldermembers.sas</a> <a href="mv__getfoldermembers_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__getfoldermembers_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of folders (and ids) for a given root. <br /></td></tr>
@@ -154,13 +157,22 @@ Files</h2></td></tr>
 <tr class="memdesc:mv__getgroups_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dataset with a list of viya groups. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getrefreshtoken_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getrefreshtoken_8sas.html">mv_getrefreshtoken.sas</a> <a href="mv__getrefreshtoken_8sas_source.html">[code]</a></td></tr>
-<tr class="memdesc:mv__getrefreshtoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Refresh Token (and initial access token) <br /></td></tr>
+<tr class="memdesc:mv__getrefreshtoken_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">deprecated - replaced by <a class="el" href="mv__tokenauth_8sas.html" title="Get initial Refresh and Access Tokens. ">mv_tokenauth.sas</a> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getusergroups_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getusergroups_8sas.html">mv_getusergroups.sas</a> <a href="mv__getusergroups_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__getusergroups_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dataset with a list of groups for a particular user. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__getusers_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__getusers_8sas.html">mv_getusers.sas</a> <a href="mv__getusers_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__getusers_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dataset with a list of users. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:mv__registerclient_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__registerclient_8sas.html">mv_registerclient.sas</a> <a href="mv__registerclient_8sas_source.html">[code]</a></td></tr>
+<tr class="memdesc:mv__registerclient_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register Client and Secret (admin task) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:mv__tokenauth_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__tokenauth_8sas.html">mv_tokenauth.sas</a> <a href="mv__tokenauth_8sas_source.html">[code]</a></td></tr>
+<tr class="memdesc:mv__tokenauth_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get initial Refresh and Access Tokens. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:mv__tokenrefresh_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__tokenrefresh_8sas.html">mv_tokenrefresh.sas</a> <a href="mv__tokenrefresh_8sas_source.html">[code]</a></td></tr>
+<tr class="memdesc:mv__tokenrefresh_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an additional access token using a refresh token. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:mv__webout_8sas"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mv__webout_8sas.html">mv_webout.sas</a> <a href="mv__webout_8sas_source.html">[code]</a></td></tr>
 <tr class="memdesc:mv__webout_8sas"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to/from the SAS Viya Job Execution Service. <br /></td></tr>
