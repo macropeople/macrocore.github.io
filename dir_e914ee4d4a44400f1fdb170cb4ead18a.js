@@ -35,11 +35,14 @@ var dir_e914ee4d4a44400f1fdb170cb4ead18a =
     [ "mp_abort.sas", "mp__abort_8sas.html", null ],
     [ "mp_binarycopy.sas", "mp__binarycopy_8sas.html", null ],
     [ "mp_cleancsv.sas", "mp__cleancsv_8sas.html", "mp__cleancsv_8sas" ],
+    [ "mp_createconstraints.sas", "mp__createconstraints_8sas.html", null ],
     [ "mp_createwebservice.sas", "mp__createwebservice_8sas.html", null ],
+    [ "mp_deleteconstraints.sas", "mp__deleteconstraints_8sas.html", null ],
     [ "mp_dirlist.sas", "mp__dirlist_8sas.html", null ],
     [ "mp_distinctfmtvalues.sas", "mp__distinctfmtvalues_8sas.html", null ],
     [ "mp_dropmembers.sas", "mp__dropmembers_8sas.html", null ],
     [ "mp_ds2cards.sas", "mp__ds2cards_8sas.html", "mp__ds2cards_8sas" ],
+    [ "mp_getconstraints.sas", "mp__getconstraints_8sas.html", null ],
     [ "mp_getddl.sas", "mp__getddl_8sas.html", null ],
     [ "mp_getmaxvarlengths.sas", "mp__getmaxvarlengths_8sas.html", null ],
     [ "mp_guesspk.sas", "mp__guesspk_8sas.html", null ],
@@ -55,5 +58,6 @@ var dir_e914ee4d4a44400f1fdb170cb4ead18a =
     [ "mp_stprequests.sas", "mp__stprequests_8sas.html", null ],
     [ "mp_streamfile.sas", "mp__streamfile_8sas.html", null ],
     [ "mp_unzip.sas", "mp__unzip_8sas.html", null ],
+    [ "mp_updatevarlength.sas", "mp__updatevarlength_8sas.html", "mp__updatevarlength_8sas" ],
     [ "mp_zip.sas", "mp__zip_8sas.html", null ]
 ];

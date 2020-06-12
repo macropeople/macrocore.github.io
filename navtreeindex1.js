@@ -1,5 +1,14 @@
 var NAVTREEINDEX1 =
 {
+"mv__deletefoldermember_8sas_source.html":[0,3,2],
+"mv__deletejes_8sas.html":[0,3,3],
+"mv__deletejes_8sas.html#ace853a1243c43e852de5b8279c671611":[0,3,3,0],
+"mv__deletejes_8sas_source.html":[0,3,3],
+"mv__deleteviyafolder_8sas.html":[0,3,4],
+"mv__deleteviyafolder_8sas.html#ace853a1243c43e852de5b8279c671611":[0,3,4,0],
+"mv__deleteviyafolder_8sas_source.html":[0,3,4],
+"mv__getaccesstoken_8sas.html":[0,3,5],
+"mv__getaccesstoken_8sas_source.html":[0,3,5],
 "mv__getapptoken_8sas.html":[0,3,6],
 "mv__getapptoken_8sas_source.html":[0,3,6],
 "mv__getfoldermembers_8sas.html":[0,3,7],
@@ -25,7 +34,7 @@ var NAVTREEINDEX1 =
 "mv__tokenauth_8sas.html":[0,3,14],
 "mv__tokenauth_8sas.html#a413cdcbf2e622d648ad38d7a31dc4336":[0,3,14,1],
 "mv__tokenauth_8sas.html#a4c650bb64b3954cae77ec4042aed1255":[0,3,14,2],
-"mv__tokenauth_8sas.html#a50a9d81a849a8175cf2c812ccf04d8fd":[0,3,14,0],
+"mv__tokenauth_8sas.html#aa7b4bc8715337e57836fd2c9c58a915d":[0,3,14,0],
 "mv__tokenauth_8sas_source.html":[0,3,14],
 "mv__tokenrefresh_8sas.html":[0,3,15],
 "mv__tokenrefresh_8sas.html#a4c650bb64b3954cae77ec4042aed1255":[0,3,15,1],

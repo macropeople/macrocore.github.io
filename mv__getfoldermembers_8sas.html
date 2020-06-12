@@ -125,9 +125,8 @@ $(document).ready(function(){initNavTree('mv__getfoldermembers_8sas.html','');})
 
 <p><a href="mv__getfoldermembers_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Works for both root level and below, oauth or password. Default is oauth, and the token is expected in a global ACCESS_TOKEN variable.</p>
-<p>mv_getfoldermembers(root=/Public)</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Works for both root level and below, oauth or password. Default is oauth, and the token is expected in a global ACCESS_TOKEN variable. </p><pre class="fragment">%mv_getfoldermembers(root=/Public)
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root=</td><td>The path for which to return the list of folders </td></tr>
     <tr><td class="paramname">outds=</td><td>The output dataset to create (default is work.mv_getfolders) </td></tr>
@@ -141,7 +140,6 @@ $(document).ready(function(){initNavTree('mv__getfoldermembers_8sas.html','');})
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 <li><a class="el" href="mf__isblank_8sas.html" title="Checks whether a macro variable is empty (blank) ">mf_isblank.sas</a> </li>

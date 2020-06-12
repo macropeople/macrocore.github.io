@@ -126,15 +126,11 @@ $(document).ready(function(){initNavTree('mv__getgroupmembers_8sas.html','');});
 <p><a href="mv__getgroupmembers_8sas_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>First, be sure you have an access token (which requires an app token).</p>
-<p>Using the macros here:</p>
-<p>filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas"; inc mc;</p>
-<p>An administrator needs to set you up with an access code:</p>
-<p>mv_registerclient(outds=client)</p>
-<p>Navigate to the url from the log (opting in to the groups) and paste the access code below:</p>
-<p>mv_tokenauth(inds=client,code=wKDZYTEPK6)</p>
-<p>Now we can run the macro!</p>
-<p>mv_getgroupmembers(All Users)</p>
-<p>outputs: </p><pre class="fragment">ordinal_root num,
+<p>Using the macros here: </p><pre class="fragment">filename mc url
+  "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+</pre><p>Now we can run the macro! </p><pre class="fragment">%mv_getgroupmembers(All Users)
+</pre><p>outputs: </p><pre class="fragment">ordinal_root num,
 ordinal_items num,
 version num,
 id char(43),
@@ -154,7 +150,6 @@ implicit num
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
-<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 </ul>
