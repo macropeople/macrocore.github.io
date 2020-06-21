@@ -145,6 +145,32 @@ $(document).ready(function(){initNavTree('mv__getgroups_8sas.html','');});
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
+<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
+<li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
+<li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
+<li><a class="el" href="mf__loc_8sas.html" title="Returns physical location of various SAS items. ">mf_loc.sas</a></li>
+</ul>
+<p>First, be sure you have an access token (which requires an app token).</p>
+<p>Using the macros here: </p><pre class="fragment">filename mc url
+  "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+%inc mc;
+</pre><p>An administrator needs to set you up with an access code: </p><pre class="fragment">%mv_registerclient(outds=client)
+</pre><p>Navigate to the url from the log (opting in to the groups) and paste the access code below: </p><pre class="fragment">%mv_tokenauth(inds=client,code=wKDZYTEPK6)
+</pre><p>Now we can run the macro! </p><pre class="fragment">%mv_getgroups()
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access_token_var=</td><td>The global macro variable to contain the access token </td></tr>
+    <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted). The default is authorization_code. </td></tr>
+    <tr><td class="paramname">outds=</td><td>The library.dataset to be created that contains the list of groups</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section version"><dt>Version</dt><dd>VIYA V.03.04 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Allan Bowe  <a href="https://github.com/macropeople/macrocore">https://github.com/macropeople/macrocore</a></dd></dl>
+<h4>Dependencies </h4>
+<ul>
+<li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
+<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 </ul>

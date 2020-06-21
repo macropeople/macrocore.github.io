@@ -127,11 +127,11 @@ $(document).ready(function(){initNavTree('mp__getmaxvarlengths_8sas.html','');})
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This macro will scan a base dataset and produce an output dataset with two columns:</p>
 <ul>
-<li>COL Name of the base dataset column</li>
+<li>NAME Name of the base dataset column</li>
 <li>MAXLEN Maximum length of the data contained therein.</li>
 </ul>
 <p>Character fields may be allocated very large widths (eg 32000) of which the maximum value is likely to be much narrower. This macro was designed to enable a HTML table to be appropriately sized however this could be used as part of a data audit to ensure we aren't over-sizing our tables in relation to the data therein.</p>
-<p>Numeric fields are converted using the relevant format to determine the width. Usage: </p><pre class="fragment">%mp_getmaxvarlengths(sashelp.class,outds=work.myds);
+<p>Numeric fields are converted using the relevant format to determine the width. Usage: </p><pre class="fragment">%mp_getmaxvarlengths(sashelp.class,outds=work.myds)
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">libds</td><td>Two part dataset (or view) reference. </td></tr>
@@ -139,6 +139,12 @@ $(document).ready(function(){initNavTree('mp__getmaxvarlengths_8sas.html','');})
   </table>
   </dd>
 </dl>
+<h4>Dependencies </h4>
+<ul>
+<li><a class="el" href="mf__getvarlist_8sas.html" title="Returns dataset variable list direct from header. ">mf_getvarlist.sas</a> </li>
+<li><a class="el" href="mf__getvartype_8sas.html" title="Returns variable type - Character (C) or Numeric (N) ">mf_getvartype.sas</a> </li>
+<li><a class="el" href="mf__getvarformat_8sas.html" title="Returns the format of a variable. ">mf_getvarformat.sas</a></li>
+</ul>
 <dl class="section version"><dt>Version</dt><dd>9.2 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe </dd></dl>
 

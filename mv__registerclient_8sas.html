@@ -128,7 +128,6 @@ $(document).ready(function(){initNavTree('mv__registerclient_8sas.html','');});
 <div class="textblock"><p>When building apps on SAS Viya, an client id and secret is required. This macro will obtain the Consul Token and use that to call the Web Service.</p>
 <p>more info: <a href="https://developer.sas.com/reference/auth/#register">https://developer.sas.com/reference/auth/#register</a> and: <a href="http://proc-x.com/2019/01/authentication-to-sas-viya-a-couple-of-approaches/">http://proc-x.com/2019/01/authentication-to-sas-viya-a-couple-of-approaches/</a></p>
 <p>The default viyaroot location is /opt/sas/viya/config</p>
-<p>M3 required due to proc http headers</p>
 <p>Usage: </p><pre class="fragment">%* compile macros;
 filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
 %inc mc;
@@ -155,7 +154,12 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
     <tr><td class="paramname">grant_type=</td><td>valid values are "password" or "authorization_code" (unquoted) </td></tr>
     <tr><td class="paramname">outds=</td><td>the dataset to contain the registered client id and secret </td></tr>
     <tr><td class="paramname">access_token_validity=</td><td>The duration of validity of the access token in seconds. A value of DEFAULT will omit the entry (and use system default) </td></tr>
-    <tr><td class="paramname">refresh_token_validity=</td><td>The duration of validity of the refresh token in seconds. A value of DEFAULT will omit the entry (and use system default)</td></tr>
+    <tr><td class="paramname">refresh_token_validity=</td><td>The duration of validity of the refresh token in seconds. A value of DEFAULT will omit the entry (and use system default) </td></tr>
+    <tr><td class="paramname">name=</td><td>A human readable name for the client </td></tr>
+    <tr><td class="paramname">required_user_groups=</td><td>A list of group names. If a user does not belong to all the required groups, the user will not be authenticated and no tokens are issued to this client for that user. If this field is not specified, authentication and token issuance proceeds normally. </td></tr>
+    <tr><td class="paramname">autoapprove=</td><td>During the auth step the user can choose which scope to apply. Setting this to true will autoapprove all the client scopes. </td></tr>
+    <tr><td class="paramname">use_session=</td><td>If true, access tokens issued to this client will be associated with an HTTP session and revoked upon logout or time-out. </td></tr>
+    <tr><td class="paramname">outjson=</td><td>A dataset containing the lines of JSON submitted. Useful for debugging. Default= <em>null</em>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -164,10 +168,12 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
 <h4>Dependencies </h4>
 <ul>
 <li><a class="el" href="mp__abort_8sas.html" title="abort gracefully according to context ">mp_abort.sas</a> </li>
+<li><a class="el" href="mf__getplatform_8sas_source.html">mf_getplatform.sas</a> </li>
 <li><a class="el" href="mf__getuniquefileref_8sas.html" title="Assigns and returns an unused fileref. ">mf_getuniquefileref.sas</a> </li>
 <li><a class="el" href="mf__getuniquelibref_8sas.html" title="Returns an unused libref. ">mf_getuniquelibref.sas</a> </li>
 <li><a class="el" href="mf__loc_8sas.html" title="Returns physical location of various SAS items. ">mf_loc.sas</a> </li>
-<li><a class="el" href="mf__getquotedstr_8sas.html" title="Adds custom quotes / delimiters to a space delimited string. ">mf_getquotedstr.sas</a> </li>
+<li><a class="el" href="mf__getquotedstr_8sas.html" title="Adds custom quotes / delimiters to a delimited string. ">mf_getquotedstr.sas</a> </li>
+<li><a class="el" href="mf__getuser_8sas.html" title="Returns &amp;sysuserid in Workspace session,  &amp;_secureusername in Stored Process session. ">mf_getuser.sas</a> </li>
 </ul>
 
 <p class="definition">Definition in file <a class="el" href="mv__registerclient_8sas_source.html">mv_registerclient.sas</a>.</p>
