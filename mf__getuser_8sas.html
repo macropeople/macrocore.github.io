@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('mf__getuser_8sas.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Returns <code>&amp;sysuserid</code> in Workspace session, <code> &amp;_secureusername</code> in Stored Process session.  
+<p>Returns a userid according to session context.  
 <a href="#details">More...</a></p>
 
 <p><a href="mf__getuser_8sas_source.html">Go to the source code of this file.</a></p>
@@ -128,15 +128,17 @@ $(document).ready(function(){initNavTree('mf__getuser_8sas.html','');});
 <div class="textblock"><p>In a workspace session, a user is generally represented by <code> &amp;sysuserid</code> or <code>SYS_COMPUTE_SESSION_OWNER</code> if it exists. <br />
  In a Stored Process session, <code>&amp;sysuserid</code> resolves to a system account (default=sassrv) and instead there are several metadata username variables to choose from (_metauser, _metaperson ,_username, _secureusername). The OS account is represented by <code> _secureusername</code> whilst the metadata account is under <code> _metaperson</code>. </p><pre class="fragment">%let user= %mf_getUser();
 %put &amp;user;
-</pre> <dl class="params"><dt>Parameters</dt><dd>
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>META returns _metaperson, OS returns _secureusername. Each of these are scanned to remove any  extensions (which can happen after a password change).</td></tr>
+    <tr><td class="paramname">type</td><td>- do not use, may be deprecated in a future release</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>sysuserid (if workspace server) </dd>
+<dl class="section return"><dt>Returns</dt><dd>SYSUSERID (if workspace server) </dd>
 <dd>
-_METAPERSON (if stored process server) or SYS_COMPUTE_SESSION_OWNER (if Viya compute session).</dd></dl>
+_METAPERSON (if stored process server) </dd>
+<dd>
+SYS_COMPUTE_SESSION_OWNER (if Viya compute session)</dd></dl>
 <dl class="section version"><dt>Version</dt><dd>9.2 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Allan Bowe </dd></dl>
 
